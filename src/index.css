@@ -9,6 +9,15 @@
   }
 }
 
+.Hamburger span::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  margin-top: 3px;
+}
+
 /* * {
   padding: 0px;
   margin: 0px;

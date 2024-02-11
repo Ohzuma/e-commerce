@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import Virtual from "../../asset/img/virtual.png";
 const Home = () => {
   return (
-    <div className="bg-slate-200 pt-16 pb-24 px-5 lg:px-24 md:px-16 relative  w-full  mt-[80px]  h-[110vh]  md:h-[100vh] overflow-hidden">
+    <div className="bg-slate-200 pt-16 pb-24 px-5 lg:px-24 md:px-16 relative  w-full  mt-[80px]  h-[110vh]  md:h-[100vh]">
       <div className="flex items-center">
         <div className="flex flex-col items-start gap-4">
           <h1
@@ -26,8 +26,8 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-2 absolute top-[-100px]  right-0 place-content-end  mr-[-150px] md:mr-[0]">
           <div
-            className="bg-white py-5 px-5 flex flex-col gap-3 shadow-2xl h-[200px] place-self-end 
-          right-0 mr-[-170px] sm:mr-[-125px] xs:mr-[-123px] xs:h-[250px]
+            className="bg-white py-5 px-5 flex flex-col gap-3 shadow-2xl md:h-[200px] place-self-end 
+          right-0 mr-[-170px] sm:mr-[-125px] xs:mr-[-123px] h-[250px]
            md:mt-0 mt-[30rem] z-10"
           >
             <h1 className=" text-2xl font-bold text-black/90">

@@ -1,12 +1,13 @@
-import React from "react";
-import ProductCard from "../component/ProductCard";
+import React, { useEffect, useRef } from "react";
+import ProductCard from "../../component/ProductCard";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Purple from "../asset/img/purple.png";
-import blackWhiteSneaker from "../asset/img/black-white_sneakers.png";
-import Black from "../asset/img/black.png";
-import Orange from "../asset/img/orangeSneakers.png";
-import Men from "../asset/img/men.png";
-const TopSeller = ({
+import blackHeadPhone from "../../asset/img/black_airpod.png";
+import blackWhiteSneaker from "../../asset/img/black-white_sneakers.png";
+import VirtualGlass from "../../asset/img/virtual.png";
+import hpLaptop from "../../asset/img/hp-laptop.png";
+import Men from "../../asset/img/men.png";
+
+const LastViewed = ({
   name,
   rating,
   price,
@@ -16,15 +17,15 @@ const TopSeller = ({
   img,
 }) => {
   return (
-    <div className="px-5 lg:px-[60px] flex flex-col gap-5 mt-[5rem]">
-      <div className="flex">
-        <h1 className="text-2xl font-bold">Amazon Top Seller</h1>
+    <div className=" px-5 lg:px-[60px] flex flex-col gap-5 mt-[3rem]">
+      <div className="flex ">
+        <h1 className="text-2xl font-bold">Last Viewed</h1>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
         <ProductCard
-          img={Purple}
-          name="Addidas Pinky Sneaker"
+          img={blackHeadPhone}
+          name="Original airpod from orimo"
           ratingNum="4578 ratings"
           price="$759"
           currPrice="$500"
@@ -39,19 +40,17 @@ const TopSeller = ({
           discount="50% off"
         />
         <ProductCard
-          img={Orange}
-          name="Stylish Nike Orange Sneaker For Clubing"
+          img={VirtualGlass}
+          name="Gaming virtual Glass For Relaxing"
           ratingNum="378 ratings"
-          currPrice="$400"
-          price="$600"
-          discount="20% off"
+          currPrice="$500"
         />{" "}
         <ProductCard
-          img={Black}
-          name="Nice Nike Sneaker For Outing"
+          img={hpLaptop}
+          name="Portable Gaming Laptop"
           ratingNum="1000 ratings"
-          currPrice="$500"
-          price="$700"
+          currPrice="$800"
+          price="$1000"
           discount="50% off"
         />
         <ProductCard
@@ -59,12 +58,10 @@ const TopSeller = ({
           name="Men Sneaker"
           ratingNum="700 ratings"
           currPrice="$619"
-          price="$800"
-          discount="20% off"
         />
       </div>
     </div>
   );
 };
 
-export default TopSeller;
+export default LastViewed;

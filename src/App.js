@@ -1,20 +1,23 @@
 import "./index.css";
+import { Route, Routes } from "react-router-dom";
+
 import Navbar from "./component/Navbar/Navbar";
-import Home from "./pages/HomePage/Home";
-import Category from "./pages/Category";
-import LastViewed from "./pages/LastViewed";
-import TopSeller from "./pages/TopSeller";
-import MusicLover from "./pages/MusicLover";
+import Footer from "./component/Footer";
+import Index from "./pages/HomePage/Index";
 
 function App() {
   return (
     <div className=" overflow-x-hidden">
       <Navbar />
-      <Home />
-      <Category />
-      <LastViewed />
-      <TopSeller />
-      <MusicLover />
+      {/* <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<LastViewed />}/>
+        <Route path="/" element={<TopSeller />}/>
+        <Route path="/" element={<MusicLover />}/>
+      </Routes> */}
+
+      <Index />
+      <Footer />
     </div>
   );
 }
