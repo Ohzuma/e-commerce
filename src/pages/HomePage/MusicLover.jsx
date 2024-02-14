@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCard from "../../component/ProductCard";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import blackHeadPhone from "../../asset/img/black_headphone.png";
 import blackAirPod from "../../asset/img/black_airpod.png";
 import PinkHeadPhone from "../../asset/img/pinkhead.png";

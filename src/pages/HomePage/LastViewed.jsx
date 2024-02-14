@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import ProductCard from "../../component/ProductCard";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import blackHeadPhone from "../../asset/img/black_airpod.png";
 import blackWhiteSneaker from "../../asset/img/black-white_sneakers.png";
 import VirtualGlass from "../../asset/img/virtual.png";

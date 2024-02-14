@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import airpod from "../asset/img/airpod.png";
-import blackAirpod from "../asset/img/black_airpod.png";
-import blackSneaker from "../asset/img/black-white_sneakers.png";
-import appleLaptp from "../asset/img/apple_laptop.png";
-import pinkHeadPhone from "../asset/img/pinkhead.png";
-import greenSneakers from "../asset/img/green_sneaker.png";
 import lady from "../asset/img/beautifulLady.png";
 import { BoxItem, Box2Item } from "../component/BoxItem";
 import Banner from "../component/Banner";

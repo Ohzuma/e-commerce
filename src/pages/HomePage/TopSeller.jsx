@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCard from "../../component/ProductCard";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Purple from "../../asset/img/purple.png";
 import blackWhiteSneaker from "../../asset/img/black-white_sneakers.png";
 import Black from "../../asset/img/black.png";
