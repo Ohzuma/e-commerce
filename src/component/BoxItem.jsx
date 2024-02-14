@@ -2,13 +2,13 @@ import React from "react";
 
 export const BoxItem = ({ name, img, desc }) => {
   return (
-    <div className="bg-white shadow-lg py-3 px-10 flex flex-col justify-center hover:shadow-2xl hover:transition-all transition-all">
+    <div className="bg-white shadow-lg py-3 px-5 flex flex-col justify-center hover:shadow-2xl hover:transition-all transition-all">
       <img
         src={img}
         alt={name}
-        className="h-[250px] w-[500px] object-contain"
+        className="h-[200px] w-[300px] object-contain"
       />
-      <h2 className="text-black/80 font-bold text-lg">{name}</h2>
+      <h2 className="text-black/80 font-bold text-sm pt-4">{name}</h2>
       <p>{desc}</p>
     </div>
   );
