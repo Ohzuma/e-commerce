@@ -10,9 +10,9 @@ const Index = () => {
     <>
       <Home />
       <Category />
-      <LastViewed />
-      <TopSeller />
-      <MusicLover />
+      {/* <LastViewed /> */}
+      {/* <TopSeller /> */}
+      {/* <MusicLover /> */}
     </>
   );
 };

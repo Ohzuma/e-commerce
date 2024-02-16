@@ -1,31 +1,42 @@
 import React from "react";
+import { FaStar } from "react-icons/fa";
 
-export const BoxItem = ({ name, img, desc }) => {
+export const ProductCard = ({
+  name,
+  ratingStart,
+  price,
+  ratingNum,
+  discount,
+  currPrice,
+  img,
+}) => {
   return (
-    <div className="bg-white shadow-lg py-3 px-5 flex flex-col justify-center hover:shadow-2xl hover:transition-all transition-all">
-      <img
-        src={img}
-        alt={name}
-        className="h-[200px] w-[300px] object-contain"
-      />
-      <h2 className="text-black/80 font-bold text-sm pt-4">{name}</h2>
-      <p>{desc}</p>
-    </div>
-  );
-};
+    <div className="shadow-lg bg-white py-5 rounded-md px-5 flex flex-col gap-3 hover:shadow-2xl hover:transition transition">
+      {discount ? (
+        <p className="font-bold text-[1rem] max-w-[100px] text-yellow-500 px-4 py-1">
+          {discount}
+        </p>
+      ) : null}
 
-export const Box2Item = ({ name, img, desc }) => {
-  return (
-    <div className="bg-[#f8f3f0] shadow-lg py-5 px-10 flex justify-between items-center flex-wrap md:col-span-2 h-[15rem] md:h-[10rem] overflow-y-clip">
-      <div className="flex flex-col gap-3">
-        <h2 className="text-black/80 font-bold text-lg">{name}</h2>
-        <p className="text-sm font-medium max-w-[300px] leading-5">{desc}</p>
+      <img src={img} alt={name} className="h-[150px] w-full object-contain" />
+
+      <div className="flex flex-col gap-1">
+        <h2 className="text-black font-bold text-md">{name}</h2>
+        <p className="flex gap-3 items-center">
+          <span className="flex gap-1 text-yellow-500 text-sm">
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+          </span>
+          <span className="text-sm font-bold text-slate-600">{ratingNum}</span>
+        </p>
+        <p className="flex gap-2  font-bold">
+          <span className="text-md ">${currPrice}</span>
+          <span className="line-through text-slate-500 text-sm">${price}</span>
+        </p>
       </div>
-      <img
-        src={img}
-        alt={name}
-        className=" h-[5rem] md:h-[100%] object-contain"
-      />
     </div>
   );
 };

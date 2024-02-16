@@ -5,40 +5,76 @@ import { BoxItem, Box2Item } from "../component/BoxItem";
 import Banner from "../component/Banner";
 import axios from "axios";
 import { LoadingContext } from "./Context";
+import { ProductCard } from "../component/BoxItem";
 
 const CategoryMenu = () => {
   const [product, setProduct] = useState([]);
-
+  const [discount, setDiscount] = useState();
   const { loading, setLoading, error, setError } = LoadingContext();
-  setLoading(false);
+
+  //   const onScroll = () => {
+  //     const scrollTop = document.documentElement.scrollTop;
+  //     const scrollHeight = document.documentElement.scrollHeight;
+  //     const clientHeight = document.documentElement.clientHeight;
+
+  //     if (scrollTop + clientHeight >= scrollHeight) {
+  //       setLimit(() => limit + 10);
+  //     }
+  //   };
+
   useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     axios
-      .get("https://fakestoreapi.com/products?limit=10")
+      .get(`https://dummyjson.com/products?limit=0`)
       .then(async (res) => {
-        setLoading(true);
-        setProduct(await res.data);
-        setLoading(false);
-        console.log(loading);
+        setProduct(res.data.products);
       })
       .catch((err) => {
         setError(err?.message);
       });
-  }, []);
+  };
   console.log(product);
+
+  const dicountAmount = (price, discount) => {
+    let newDiscount = discount / 100;
+    let newPrice = Math.floor(newDiscount * price);
+    // setDiscount(newPrice);
+    return newPrice;
+  };
+
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {product.map((product) => {
-          return <BoxItem img={product.image} name={product.title} />;
+          return (
+            // <ProductCard
+            //   key={product?.id}
+            //   img={product?.images[1]}
+            //   name={product.title}
+            // />
+
+            <ProductCard
+              key={product?.id}
+              img={product?.images[1]}
+              name={product.title}
+              ratingNum={product?.rating}
+              currPrice={`$${product?.price}`}
+              price={dicountAmount(product?.price, product?.discountPercentage)}
+              discount={`${product?.discountPercentage}%`}
+            />
+          );
         })}
       </div>
-      <Banner
+      {/* <Banner
         title="AMAZON DELIVERS TO YOU"
         img={lady}
         desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!"
         btn="Order Now"
-      />
+      /> */}
     </>
   );
 };

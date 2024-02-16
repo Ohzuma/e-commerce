@@ -3,9 +3,9 @@ import { FaStar } from "react-icons/fa";
 import Virtual from "../../asset/img/virtual.png";
 const Home = () => {
   return (
-    <div className="bg-slate-200 pt-16 pb-24 px-5 lg:px-24 md:px-16 relative  w-full  mt-[80px]  h-[110vh]  md:h-[100vh]">
+    <div className="bg-slate-100 pt-16 pb-24 px-5 lg:px-24 md:px-16 relative  w-full  mt-[80px]  h-[110vh]  md:h-[100vh]">
       <div className="flex items-center">
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-start gap-4 lg:mt-[4rem]">
           <h1
             className="sm:text-[2.5rem] xs:text-[1.5rem] 
            md:text-[3rem]  lg:text-[3.1rem] 2xxl:text-[3.5rem]
