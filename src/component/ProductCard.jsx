@@ -37,7 +37,7 @@ const ProductCard = ({
         </p>
         <p className="flex gap-2 text-sm font-bold">
           <span className="text-3xl">{currPrice}</span>
-          <span className="line-through text-slate-500">{price}</span>
+          <span className="line-through text-slate-500 text-sm">{price}</span>
         </p>
       </div>
     </div>

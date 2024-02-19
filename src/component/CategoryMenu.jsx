@@ -6,6 +6,7 @@ import Banner from "../component/Banner";
 import axios from "axios";
 import { LoadingContext } from "./Context";
 import { ProductCard } from "../component/BoxItem";
+import Detail from "./DetailPage/Detail";
 
 const CategoryMenu = () => {
   const [product, setProduct] = useState([]);
@@ -36,7 +37,6 @@ const CategoryMenu = () => {
         setError(err?.message);
       });
   };
-  console.log(product);
 
   const dicountAmount = (price, discount) => {
     let newDiscount = discount / 100;
@@ -45,36 +45,35 @@ const CategoryMenu = () => {
     return newPrice;
   };
 
+  const sliceText = (text) => {
+    return text.substring(0, 40);
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {product.map((product) => {
           return (
-            // <ProductCard
-            //   key={product?.id}
-            //   img={product?.images[1]}
-            //   name={product.title}
-            // />
-
-            <ProductCard
-              key={product?.id}
-              img={product?.images[1]}
-              name={product.title}
-              ratingNum={product?.rating}
-              currPrice={`$${product?.price}`}
-              price={dicountAmount(product?.price, product?.discountPercentage)}
-              discount={`${product?.discountPercentage}%`}
-            />
+            <>
+              <a href={`/detail/${product?.id}`}>
+                <ProductCard
+                  key={product?.id}
+                  img={product?.images[1]}
+                  name={product.title}
+                  desc={`${sliceText(product?.description)}...`}
+                  ratingNum={product?.rating}
+                  currPrice={dicountAmount(
+                    product?.price,
+                    product?.discountPercentage
+                  )}
+                  price={`$${product?.price}`}
+                  discount={`${product?.discountPercentage}%`}
+                />
+              </a>
+            </>
           );
         })}
       </div>
-      {/* <Banner
-        title="AMAZON DELIVERS TO YOU"
-        img={lady}
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!"
-        btn="Order Now"
-      /> */}
     </>
   );
 };
