@@ -1,6 +1,6 @@
 import React from "react";
-import { FaCartArrowDown, FaStar } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaCartArrowDown } from "react-icons/fa";
+import { LoadingContext } from "./Context";
 
 export const ProductCard = ({
   name,
@@ -12,8 +12,10 @@ export const ProductCard = ({
   img,
   desc,
 }) => {
+  const { handleCart } = LoadingContext();
+
   return (
-    <div className="relative shadow-lg bg-white py-5 rounded-md px-5 flex flex-col gap-3 hover:shadow-2xl hover:transition transition">
+    <div className="relative  shadow-lg bg-white py-5 rounded-md px-5 flex flex-col gap-3 hover:shadow-2xl hover:transition transition">
       {/* {discount ? (
         <p className="font-bold text-[1rem] max-w-[100px] text-yellow-500 px-4 py-1">
           {discount}
@@ -31,7 +33,10 @@ export const ProductCard = ({
           <span className="line-through text-slate-500 text-sm">${price}</span>
         </p>
 
-        <span className="text-black/90 absolute bottom-10 right-10 text-xl hover:cursor-pointer hover:text-red-900/80 ">
+        <span
+          onClick={handleCart("hello")}
+          className="text-black/90 absolute bottom-10 right-10 text-xl hover:cursor-pointer hover:text-red-900/80 "
+        >
           <FaCartArrowDown />
         </span>
       </div>
