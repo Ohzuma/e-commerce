@@ -37,7 +37,7 @@ const Category = () => {
     <div className=" px-5 lg:px-[60px] mt-[5rem] flex flex-col gap-8 justify-center">
       <Sport />
 
-      <div className="grid grid-cols-[0.3fr,1fr] mt-[5rem] gap-8 ">
+      {/* <div className="grid grid-cols-[0.3fr,1fr] mt-[5rem] gap-8 ">
         <div className=" bg-white shadow-2xl px-4 h-auto py-8 flex flex-col items-centers jsustify-center ">
           <div
             className="py-2 px-3 
@@ -48,10 +48,10 @@ const Category = () => {
               return <span className="flex gap-2 text-black/90">{item}</span>;
             })}
           </div>
-        </div>
-        <CategoryMenu />
-      </div>
+        </div> */}
+      <CategoryMenu />
     </div>
+    // </div>
   );
 };
 
