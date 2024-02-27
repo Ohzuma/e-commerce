@@ -68,9 +68,9 @@ const CategoryMenu = ({ value }) => {
       {error && <p>{error}</p>}
       {loading && <p className="text-2xl">Loading...</p>}
       <div
-        className="grid grid-cols-1
+        className="grid grid-cols-2
        md:grid-cols-3 
-       lg:grid-cols-4 gap-y-4 gap-x-4 w-full  "
+       lg:grid-cols-4 gap-y-4 md:gap-x-4 gap-x-3 w-full   "
       >
         {product.map((product) => {
           return (

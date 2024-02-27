@@ -53,7 +53,7 @@ const Sport = ({ value }) => {
       {error && <p>{error}</p>}
       {loading && <p className="text-2xl">Loading...</p>}
       <h1 className="text-2xl">FEATURED PRODUCTS</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-8 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 gap-y-4 md:gap-8 ">
         {product.map((product) => {
           return (
             <>
