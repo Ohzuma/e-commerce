@@ -83,7 +83,7 @@ const CategoryMenu = ({ value }) => {
                   <img
                     src={product?.thumbnail}
                     alt={product.title}
-                    className="h-[150px] object-contain md:h-[200px] w-full 
+                    className="h-[150px]  md:h-[200px] w-full 
                      rounded-xl "
                   />
                 </a>
