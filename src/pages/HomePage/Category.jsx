@@ -15,18 +15,6 @@ const Category = () => {
   //   setInputValue(() => e.target.value);
   // };
 
-  useEffect(() => {
-    axios
-      .get(`https://dummyjson.com/products/categories`)
-      .then((res) => {
-        setCategory(res.data);
-      })
-      .catch((err) => {
-        // setError(err?.message);
-        console.log(err);
-      });
-  }, []);
-
   // useEffect(() => {
   //   window.onscroll = () => window.scrollY === 53 && console.log("back at top");
 

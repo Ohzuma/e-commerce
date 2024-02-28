@@ -77,7 +77,7 @@ const CategoryMenu = ({ value }) => {
             <>
               <div
                 className="relative shadow-lg  grayscale hover:grayscale-0
-               bg-white py-5 rounded-md px-5 flex flex-col gap-3 transition"
+               bg-white py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
               >
                 <a href={`/detail/${product?.id}`}>
                   <img

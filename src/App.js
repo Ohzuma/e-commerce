@@ -6,6 +6,7 @@ import Index from "./pages/HomePage/Index";
 import Cart from "./pages/cart/Cart";
 import Detailed from "./pages/HomePage/Detailed";
 import { Routes, Route } from "react-router-dom";
+import Shoes from "./pages/Shoes";
 function App() {
   return (
     <div className=" overflow-x-hidden">
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail/:id" element={<Detailed />} />
+        <Route path="/shoes" element={<Shoes />} />
         <Route
           path="*"
           element={

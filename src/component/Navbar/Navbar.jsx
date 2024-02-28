@@ -33,7 +33,7 @@ const Navbar = () => {
                 <a href="/">Computers</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
-                <a href="/">Shoes</a>
+                <a href="/shoes">Shoes</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
                 <a href="/">Login</a>
