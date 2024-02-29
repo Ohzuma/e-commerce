@@ -37,7 +37,7 @@ const Category = () => {
             })}
           </div>
         </div> */}
-      <h1 className="text-2xl mt-[3rem]">FEATURED PRODUCTS</h1>
+      <h1 className="text-2xl mt-[3rem]"> PRODUCTS</h1>
 
       <CategoryMenu />
     </div>
