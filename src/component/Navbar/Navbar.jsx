@@ -24,13 +24,13 @@ const Navbar = () => {
                 <a href="/">Home</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
-                <a href="/">Jewelries</a>
+                <a href="/Jewelries">Jewelries</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
                 <a href={"/fashion"}>Fashion</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
-                <a href="/">Computers</a>
+                <a href="/computer">Computers</a>
               </li>
               <li className="hover:text-slate-600 transition-all">
                 <a href="/shoes">Shoes</a>

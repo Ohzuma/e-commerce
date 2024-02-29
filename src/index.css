@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-white font-poppins overflow-x-hidden;
+    @apply bg-slate-100 font-poppins overflow-x-hidden;
   }
 }
 
@@ -41,3 +41,32 @@ body {
   display: flex;
   justify-content: center;
 } */
+
+.slider-btn {
+  position: absolute;
+  z-index: 40;
+  color: rgb(22, 20, 20);
+  padding: 0.5rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+.slider-btn:hover {
+  background-color: rgb(26, 23, 23);
+  color: white;
+  transition: 0.5s;
+}
+
+.slider-btn.custom-next-button {
+  right: 0;
+  top: 25%;
+}
+.slider-btn.custom-prev-button {
+  left: 0;
+  top: 25%;
+}

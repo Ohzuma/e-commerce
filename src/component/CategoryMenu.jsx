@@ -15,7 +15,7 @@ const CategoryMenu = ({ value }) => {
     const fetchData = async () => {
       setLoading(true);
       await axios
-        .get(`https://dummyjson.com/products?limit=50`)
+        .get(`https://dummyjson.com/products?limit=38`)
         .then((res) => {
           setProduct(res.data.products);
           window.localStorage.setItem(

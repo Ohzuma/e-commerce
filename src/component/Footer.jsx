@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="relative mt-[20rem]">
+    <div className="relatives mt-[20rem]">
       <div className=" absolutes bottom-0 bg-slate-200 w-full py-8 px-5 flex flex-col gap-4 justify-center items-center">
         {" "}
         <ul className="flex flex-row gap-3 text-black/80 font-bold  " l>

@@ -7,6 +7,10 @@ import Cart from "./pages/cart/Cart";
 import Detailed from "./pages/HomePage/Detailed";
 import { Routes, Route } from "react-router-dom";
 import Shoes from "./pages/Shoes";
+import Computer from "./pages/Computer";
+import Fashion from "./pages/Fashion";
+import Jewelries from "./pages/jewelries";
+
 function App() {
   return (
     <div className=" overflow-x-hidden">
@@ -18,6 +22,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail/:id" element={<Detailed />} />
         <Route path="/shoes" element={<Shoes />} />
+        <Route path="/computer" element={<Computer />} />
+        <Route path="/fashion" element={<Fashion />} />
+        <Route path="/jewelries" element={<Jewelries />} />
         <Route
           path="*"
           element={

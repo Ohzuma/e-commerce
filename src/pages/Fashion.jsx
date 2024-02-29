@@ -11,7 +11,7 @@ import { register } from "swiper/element/bundle";
 
 register();
 
-const Shoes = () => {
+const Fashion = () => {
   const [singleProduct, setSingleProduct] = useState([]);
   const [TopProduct, setTopProduct] = useState([]);
   const [product, setProduct] = useState([]);
@@ -29,7 +29,7 @@ const Shoes = () => {
         console.log(err);
       });
     axios
-      .get(`https://dummyjson.com/products?limit=30&skip=20`)
+      .get(`https://dummyjson.com/products?limit=20&skip=60`)
       .then((res) => {
         setTopProduct(res.data.products);
       })
@@ -38,7 +38,7 @@ const Shoes = () => {
         console.log(err);
       });
     axios
-      .get(`https://dummyjson.com/products?limit=30&skip=50`)
+      .get(`https://dummyjson.com/products?limit=30&skip=60`)
       .then((res) => {
         setProduct(res.data.products);
       })
@@ -75,10 +75,10 @@ const Shoes = () => {
           <div className="absolute w-full h-full bg-black/90 top-0 flex justify-center items-center text-white">
             <div className="flex flex-col gap-2 items-center justify-center">
               <h1 className="text-5xl text-white font-extrabold tracking-wide">
-                Shoes For Everyone
+                Let's Make You Unique
               </h1>
               <p className="text-xl font-medium normal-case">
-                Discover New and Trending Product
+                Discover New and Trending Cloths
               </p>
               <div className="bg-white px-3 py-4 h-[50px] rounded-sm flex items-center w-[500px] gap-4 justify-between">
                 <input
@@ -143,7 +143,7 @@ const Shoes = () => {
           </article>
           <section className="mt-[5rem]">
             <h1 className=" font-medium text-2xl pb-8">
-              Shoes Avaliable In Store
+              Dresses Avaliable In Store
             </h1>
             <div
               className="grid grid-cols-2
@@ -209,4 +209,4 @@ const Shoes = () => {
   );
 };
 
-export default Shoes;
+export default Fashion;
