@@ -171,10 +171,13 @@ const Shoes = () => {
                   {TopProduct.map((item, i) => {
                     return (
                       <swiper-slide key={i}>
-                        <a href={`/detail/${item?.id}`}>
+                        <a
+                          href={`/detail/${item?.id}`}
+                          className="flex flex-col items-center gap-1"
+                        >
                           <img
                             src={item?.thumbnail}
-                            className="md:w-[100px] h-[70px] object-contain"
+                            className="w-full md:w-[100px] h-[70px] object-contain"
                             alt={item?.title}
                           />
                           <p className="text-[0.7rem] text-black/80">
