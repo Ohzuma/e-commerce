@@ -13,7 +13,7 @@ import Jewelries from "./pages/jewelries";
 
 function App() {
   return (
-    <div className=" overflow-x-hidden">
+    <div className=" overflow-x-hidden relative">
       {/* <LoadingContext> */}
       <Navbar />
 

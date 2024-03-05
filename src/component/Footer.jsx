@@ -4,8 +4,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="relatives mt-[20rem]">
-      <div className=" absolutes bottom-0 bg-slate-200 w-full py-8 px-5 flex flex-col gap-4 justify-center items-center">
+    <div className="relative mt-[20rem]">
+      <div className=" relative bottom-0 bg-slate-200 w-full py-8 px-5 flex flex-col gap-4 justify-center items-center">
         <ul className="flex flex-row gap-3 text-black/80 font-bold  ">
           <li className="text-[1rem] ">
             <Link to={"/"}>Home</Link>

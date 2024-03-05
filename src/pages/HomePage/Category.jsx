@@ -3,6 +3,7 @@ import CategoryMenu from "../../component/CategoryMenu";
 import { LoadingContext } from "../../component/Context";
 import axios from "axios";
 import Sport from "./Sport";
+import BestSeller from "../BestSeller";
 
 const Category = () => {
   const { loading, error } = LoadingContext();
@@ -23,6 +24,7 @@ const Category = () => {
 
   return (
     <div className=" px-5 lg:px-[60px] mt-[5rem] flex flex-col gap-8 justify-center">
+      <BestSeller />
       <Sport />
 
       {/* <div className="grid grid-cols-[0.3fr,1fr] mt-[5rem] gap-8 ">

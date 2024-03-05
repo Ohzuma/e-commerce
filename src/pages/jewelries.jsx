@@ -81,7 +81,7 @@ const Jewelries = () => {
   };
   return (
     <>
-      <main className="md:mt-[5rem]  relative h-auto">
+      <main className="md:mt-[5rem]  relative h-full">
         <div className="relative">
           <div className={`h-[25rem] relative -z-0`}>
             <img
@@ -91,18 +91,18 @@ const Jewelries = () => {
             />
             <div className="absolute w-full h-full bg-black/90 top-0 flex justify-center items-center text-white">
               <div className="flex flex-col md:gap-2 gap-1 items-center justify-center">
-                <h1 className=" text-2xl md:text-5xl text-white font-extrabold tracking-wide">
-                  Jewelrie For Everyone
+                <h1 className=" text-2xl sm:text-5xl text-white font-extrabold tracking-wide">
+                  Affordable Jewelries
                 </h1>
                 <p
-                  className="text-md md:text-xl 
+                  className="text-md sm:text-xl 
                 font-medium normal-case"
                 >
-                  Discover New and Trending Designs
+                  Well designed jewelries
                 </p>
                 <div
                   className="bg-white px-3 py-4 h-[50px] rounded-md flex 
-                items-center w-full md:w-[500px] md:max-w-[500px] gap-4 justify-between "
+                items-center w-full sm:w-[500px] md:max-w-[500px] gap-4 justify-between "
                 >
                   <input
                     type="text"
@@ -117,8 +117,11 @@ const Jewelries = () => {
             </div>
           </div>
 
-          <div className="mx-auto px-4 md:px-[5rem] -mt-[6rem] absolute   w-full">
-            <article className="bg-white shadow-lg h-[200px] w-full rounded-lg px-5 py-5 ">
+          <div className="mx-auto px-4 md:px-[5rem] relative    w-full">
+            <article
+              className=" -mt-[6rem] absoluate bg-white shadow-lg h-[200px]
+             w-full rounded-lg px-5 py-5 z-50 "
+            >
               <h1 className="font-bold text-2xl text-black/80 pb-5">
                 Top Categories
               </h1>
