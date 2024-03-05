@@ -26,20 +26,22 @@ const Detailed = () => {
   console.log(product);
   return (
     <div className="mt-[10rem] bg-slate-100 px-3 md:px-[5rem]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-5 place-items-center ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white place-content-center py-8 px-3 place-items-center ">
         <div>
           <img
             src={product?.thumbnail}
             alt={product?.title}
-            className="lg:max-w-[500px] lg:max-h-[400px] max-w-[100%]"
+            className="lg:max-w-[500px] lg:max-h-[400px] max-w-[60%]"
           />
         </div>
         <div className="flex flex-col gap-3">
           <p className="text-orange-400 uppercase font-bold text-sm">
             {product?.brand} Company
           </p>
-          <h2 className="text-2xl font-bold text-black/90">{product?.title}</h2>
-          <p className="max-w-[400px] text-sm leading-6">
+          <h2 className="text-3xl md:text-2xl font-bold text-black/90 capitalize">
+            {product?.title}
+          </h2>
+          <p className="max-w-[400px] text-md font-medium leading-6">
             {product?.description}
           </p>
           <p className=" text-sm leading-6 font-bold">

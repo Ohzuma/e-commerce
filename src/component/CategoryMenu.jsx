@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { LoadingContext } from "./Context";
 // import { ProductCard } from "../component/BoxItem";
-import { FaCartArrowDown } from "react-icons/fa";
+import { FaCartArrowDown, FaHeart, FaRegHeart } from "react-icons/fa";
 
 const CategoryMenu = ({ value }) => {
   const [product, setProduct] = useState([]);
@@ -69,7 +69,7 @@ const CategoryMenu = ({ value }) => {
       {loading && <p className="text-2xl">Loading...</p>}
       <div
         className="grid grid-cols-2
-       md:grid-cols-3 
+       sm:grid-cols-3 
        lg:grid-cols-4 gap-y-4 md:gap-x-4 gap-x-3 w-full   "
       >
         {product.map((product) => {
@@ -77,30 +77,30 @@ const CategoryMenu = ({ value }) => {
             <>
               <div
                 className="relative shadow-lg  grayscale hover:grayscale-0
-               bg-white py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
+               bg-white py-5 rounded-sm px-2 md:px-5  flex flex-col gap-3 transition"
               >
                 <a href={`/detail/${product?.id}`}>
                   <img
                     src={product?.thumbnail}
                     alt={product.title}
-                    className="h-[150px]  md:h-[200px] w-full 
+                    className="h-[120px]  md:h-[200px] w-full 
                      rounded-xl "
                   />
                 </a>
 
                 <div className="flex flex-col gap-1">
-                  <h2 className="text-black font-bold text-md">
+                  <h2 className="text-black font-bold text-sm md:text-md ">
                     {product.title}
                   </h2>
                   <span className="text-sm text-black/90">
                     {sliceText(product?.description)}...
                   </span>
-                  <span className="text-sm font-bold text-black">
+                  <span className="text-sm hidden md:block font-bold text-black">
                     {product?.rating} rating
                   </span>
 
                   <p className="flex gap-2  font-bold">
-                    <span className="text-md ">
+                    <span className="text-sm md:text-md ">
                       $
                       {dicountAmount(
                         product?.price,
@@ -112,12 +112,17 @@ const CategoryMenu = ({ value }) => {
                     </span>
                   </p>
 
-                  <span
-                    onClick={() => handleCart(product)}
-                    className="text-black/90 absolute bottom-10 right-10 text-xl hover:cursor-pointer hover:text-red-900/80 "
-                  >
-                    <FaCartArrowDown />
-                  </span>
+                  <p className="flex gap-3  static transition-all md:absolute bottom-10 right-10 text-lg">
+                    <span className="hover:cursor-pointer">
+                      <FaRegHeart />
+                    </span>
+                    <span
+                      //   onClick={() => handleCart(product)}
+                      className="text-black/90 hover:cursor-pointer"
+                    >
+                      <FaCartArrowDown />
+                    </span>
+                  </p>
                 </div>
               </div>
             </>

@@ -13,7 +13,7 @@
   content: "";
   width: 20px;
   height: 3px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255);
   display: block;
   margin-top: 3px;
 }
@@ -44,7 +44,7 @@ body {
 
 .slider-btn {
   position: absolute;
-  z-index: 40;
+  z-index: 10;
   color: rgb(22, 20, 20);
   padding: 0.5rem;
   height: 40px;
