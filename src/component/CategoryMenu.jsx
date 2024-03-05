@@ -72,9 +72,9 @@ const CategoryMenu = ({ value }) => {
        sm:grid-cols-3 
        lg:grid-cols-4 gap-y-4 md:gap-x-4 gap-x-3 w-full   "
       >
-        {product.map((product) => {
+        {product.map((product, i) => {
           return (
-            <>
+            <div key={i}>
               <div
                 className="relative shadow-lg  grayscale hover:grayscale-0
                bg-white py-5 rounded-sm px-2 md:px-5  flex flex-col gap-3 transition"
@@ -125,7 +125,7 @@ const CategoryMenu = ({ value }) => {
                   </p>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
