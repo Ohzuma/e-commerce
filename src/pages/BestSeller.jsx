@@ -64,7 +64,7 @@ const BestSeller = () => {
         <swiper-container
           //   className="flex gap-4"
           spacebetween="50"
-          slidesPerView="3"
+          slidesPerView="2"
           loop="true"
           autoplay="true"
           // autoplayDelay="2000"
@@ -72,7 +72,7 @@ const BestSeller = () => {
           navigation-prev-el=".custom-prev-button"
           breakpoints={JSON.stringify({
             320: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             640: {
