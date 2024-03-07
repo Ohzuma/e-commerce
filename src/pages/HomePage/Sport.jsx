@@ -53,12 +53,12 @@ const Sport = ({ value }) => {
       {error && <p>{error}</p>}
       {loading && <p className="text-2xl">Loading...</p>}
       <h1 className="text-2xl">FEATURED PRODUCTS</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-4 md:gap-8 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-col-4 lg:grid-cols-5 gap-x-3 gap-y-4 md:gap-8 ">
         {product.map((product, i) => {
           return (
             <div key={i}>
               <div
-                className="relative shadow-lg  grayscale hover:grayscale-0
+                className="relative shadow-lg h-full grayscale hover:grayscale-0
                bg-white py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
               >
                 <a href={`/detail/${product?.id}`}>

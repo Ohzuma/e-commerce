@@ -91,8 +91,8 @@ const BestSeller = () => {
               <swiper-slide key={i}>
                 <a href={`/detail/${item?.id}`}>
                   <div
-                    className="relative shadow-lg  grayscale hover:grayscale-0
-               bg-white py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
+                    className="relative  grayscale hover:grayscale-0
+               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
                   >
                     <a href={`/detail/${product?.id}`}>
                       <img
