@@ -10,6 +10,8 @@ import Shoes from "./pages/Shoes";
 import Computer from "./pages/Computer";
 import Fashion from "./pages/Fashion";
 import Jewelries from "./pages/jewelries";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
         <Route path="/computer" element={<Computer />} />
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/jewelries" element={<Jewelries />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
         <Route
           path="*"
           element={

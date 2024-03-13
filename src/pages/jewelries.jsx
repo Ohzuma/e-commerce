@@ -77,7 +77,7 @@ const Jewelries = () => {
   };
 
   const sliceText = (text) => {
-    return text.substring(0, 40);
+    return text.substring(0, 80);
   };
   return (
     <>
@@ -192,31 +192,31 @@ const Jewelries = () => {
               </h1>
               {loading && <p className="text-2xl text-black">Loading...</p>}
               <div
-                className="grid grid-cols-2
-       sm:grid-cols-3 
-       lg:grid-cols-4 gap-y-8 md:gap-x-4 gap-x-3 w-full   "
+                className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 
+      md:grid-cols-4  gap-x-3 gap-y-4 md:gap-8  justify-items-center "
               >
-                {product.map((product) => {
+                {product.map((product, i) => {
                   return (
-                    <>
+                    <div key={i}>
                       <div
-                        className="relative shadow-lg  grayscale hover:grayscale-0
-               bg-white py-5 rounded-md h-full px-2 md:px-5  flex flex-col gap-3 transition"
+                        className="relative  grayscale hover:grayscale-0 
+              bg-white py-5 rounded-sm px-2 md:px-5 h-full max-w-[250px] xs:max-w-[auto] 
+               flex-col gap-3 transition"
                       >
                         <a href={`/detail/${product?.id}`}>
                           <img
                             src={product?.thumbnail}
                             alt={product.title}
-                            className="h-[120px]  md:h-[200px] w-full 
+                            className="h-[120px]  md:h-[150px] w-full 
                      rounded-xl "
                           />
                         </a>
 
-                        <div className="flex flex-col gap-1">
-                          <h2 className="text-black font-bold text-sm md:text-md ">
+                        <div className="flex flex-col gap-1 pt-2">
+                          <h2 className="text-black font-bold text-[0.70rem]  md:text-lg">
                             {product.title}
                           </h2>
-                          <span className="text-sm text-black/90">
+                          <span className="text-sm text-black/90 block">
                             {sliceText(product?.description)}...
                           </span>
                           <span className="text-sm hidden md:block font-bold text-black">
@@ -249,7 +249,7 @@ const Jewelries = () => {
                           </p>
                         </div>
                       </div>
-                    </>
+                    </div>
                   );
                 })}
               </div>

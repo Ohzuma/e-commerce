@@ -7,7 +7,7 @@ const Home = () => {
       <div className="flex items-center">
         <div className="flex flex-col items-start gap-4 lg:mt-[4rem]">
           <h1
-            className="sm:text-[2.5rem] xs:text-[1.5rem] 
+            className="text-[1.5rem] sm:text-[2.5rem] xs:text-[1.5rem] 
            md:text-[3rem]  lg:text-[3.1rem] 2xxl:text-[3.5rem]
           leading-snug  uppercase flex flex-col font-bold text-white break-after-page"
           >
@@ -26,8 +26,8 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-2 absolute top-[-100px]  right-0 place-content-end  mr-[-150px] md:mr-[0]">
           <div
-            className="grayscale bg-white py-5 px-5 flex flex-col gap-3 shadow-2xl md:h-[200px] place-self-end 
-          right-0 mr-[-170px] sm:mr-[-125px] xs:mr-[-123px] h-[250px]
+            className=" bg-white py-5 px-5 flex flex-col gap-3 shadow-2xl md:h-[200px] place-self-end 
+          mr-[-130px] sm:mr-[-125px] xs:mr-[-123px] h-[250px]
            md:mt-0 mt-[30rem] z-10"
           >
             <h1 className=" text-2xl font-bold text-black/90">
@@ -51,7 +51,7 @@ const Home = () => {
           <img
             src={Virtual}
             alt="Virual game glass"
-            className=" grayscale h-[500px]  w-[500px] md:w-[500px] md:h-[600px] lg:mt-[50px] "
+            className="  h-[500px]  w-[500px] md:w-[500px] md:h-[600px] lg:mt-[50px] "
           />
         </div>
       </div>
