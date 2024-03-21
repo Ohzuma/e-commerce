@@ -4,7 +4,7 @@ import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 const Login = () => {
   return (
     <main className="mt-[4.3rem]">
-      <div className=" rounded-lg mx-auto max-w-[400px] h-[550px] py-10 px-5 bg-white shadow-xl">
+      <div className=" rounded-lg mx-auto xs:max-w-[300px] sm:max-w-[400px] h-[550px] py-10 px-5 bg-white shadow-xl">
         <div>
           <div className=" flex flex-col gap-4 justify-center items-center  ">
             <div className="flex flex-col pb-3 items-center gap-2 ">

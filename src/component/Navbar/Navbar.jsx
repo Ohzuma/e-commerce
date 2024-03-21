@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { FaCartArrowDown } from "react-icons/fa";
+import { FaCartArrowDown, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [setNav, setShowNav] = useState(false);
@@ -21,13 +21,13 @@ const Navbar = () => {
   return (
     <nav
       className="fixed w-full
-      z-20 top-0  bg-black h-[50px] shadow-lg flex items-center justify-cesnter "
+      z-20 top-0  bg-black h-[50px] shadow-lg flex items-center  py-2 px-4 md:px-12 "
     >
       <main
         className=" w-[100%] "
         // ref={navRef}
       >
-        <div className=" py-2 px-4 md:px-7">
+        <div className="">
           <div className="flex flex-row items-center  justify-between">
             {/* <div className="flex items-center"> */}
             <div>
@@ -66,7 +66,13 @@ const Navbar = () => {
               </li>
             </ul>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
+              <a
+                href={"/"}
+                className="text-2xl text-white relative flex justify-center items-center"
+              >
+                <FaUser />
+              </a>
               <button
                 onClick={() => setShowCart(!showCart)}
                 className="text-2xl text-white relative flex justify-center items-center"

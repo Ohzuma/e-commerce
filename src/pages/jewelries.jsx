@@ -81,7 +81,7 @@ const Jewelries = () => {
   };
   return (
     <>
-      <main className="md:mt-[5rem]  relative h-full">
+      <main className=" relative h-full">
         <div className="relative">
           <div className={`h-[25rem] relative -z-0`}>
             <img
@@ -192,7 +192,7 @@ const Jewelries = () => {
               </h1>
               {loading && <p className="text-2xl text-black">Loading...</p>}
               <div
-                className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 
+                className="grid px-3 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 
       md:grid-cols-4  gap-x-3 gap-y-4 md:gap-8  justify-items-center "
               >
                 {product.map((product, i) => {
