@@ -44,9 +44,36 @@ export const Context = ({ children }) => {
   // }, []);
 
   // console.log(cart?.id);
+  const handleSubmit = () => {
+    try {
+      axios
+        .post("https://dummyjson.com/auth/login", {
+          username: "kminchelle",
+          password: "0lelplR",
+        })
+        .then((res) => {
+          if (localStorage.getItem("token") == null) {
+            localStorage.setItem("token", res.data.token);
+            console.log(res);
+          }
+        });
+    } catch (error) {
+      console.log(error);
+    }
+    return;
+  };
   return (
     <Loading.Provider
-      value={{ loading, setLoading, error, setError, handleCart, cart, isCart }}
+      value={{
+        loading,
+        setLoading,
+        error,
+        setError,
+        handleCart,
+        cart,
+        isCart,
+        handleSubmit,
+      }}
     >
       {children}
     </Loading.Provider>

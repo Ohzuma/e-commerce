@@ -1,7 +1,20 @@
 import React from "react";
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
+import axios from "axios";
 
 const Login = () => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post("https://dummyjson.com/auth/login", {
+  //       username: "kminchelle",
+  //       password: "0lelplR",
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  // };
+
   return (
     <main className="mt-[4.3rem]">
       <div className=" rounded-lg mx-auto xs:max-w-[300px] sm:max-w-[400px] h-[550px] py-10 px-5 bg-white shadow-xl">
@@ -13,7 +26,7 @@ const Login = () => {
               </h1>
               <span>To get started create an account with us now!!</span>
             </div>
-            <form action="/" className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4">
               <div className="input">
                 <input type="email" placeholder="Email address" />
               </div>

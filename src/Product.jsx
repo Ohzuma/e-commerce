@@ -7,12 +7,12 @@ import {
 } from "react-icons/fa";
 import { register } from "swiper/element/bundle";
 
-import { LoadingContext } from "../component/Context";
+import { LoadingContext } from "./component/Context";
 import axios from "axios";
 
 register();
 
-const BestSeller = () => {
+const Product = () => {
   const [product, setProduct] = useState([]);
   const { error, loading, setLoading, setError } = LoadingContext();
 
@@ -30,7 +30,7 @@ const BestSeller = () => {
     const fetchData = async () => {
       setLoading(true);
       await axios
-        .get(`https://dummyjson.com/products?limit=30&skip=70`)
+        .get(`https://dummyjson.com/products?limit=20&skip=30`)
         .then((res) => {
           setProduct(res.data.products);
           setLoading(false);
@@ -47,7 +47,7 @@ const BestSeller = () => {
     <div>
       <h1 className="text-2xl text-center my-[1rem] uppercase pb-5 flex flex-col items-center justify-center h1">
         {" "}
-        Best Selling Product
+        Stored Products
       </h1>
 
       {loading && (
@@ -66,14 +66,15 @@ const BestSeller = () => {
           spacebetween="50"
           slidesPerView="2"
           loop="true"
+          //   autoplay="true"
+          navigation-next-el=".custom-next-button"
+          navigation-prev-el=".custom-prev-button"
           autoplay={JSON.stringify({
             delay: 2000,
             disableOnInteraction: true,
             reverseDirection: false,
             pauseOnMouseEnter: true,
           })}
-          navigation-next-el=".custom-next-button"
-          navigation-prev-el=".custom-prev-button"
           breakpoints={JSON.stringify({
             320: {
               slidesPerView: 2,
@@ -85,7 +86,7 @@ const BestSeller = () => {
             },
 
             768: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 40,
             },
           })}
@@ -95,8 +96,8 @@ const BestSeller = () => {
               <swiper-slide key={i}>
                 <a href={`/detail/${item?.id}`}>
                   <div
-                    className="relative  bg-white shadow-lg
-               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
+                    className="relative  bg-white shadow-lg 
+               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full "
                   >
                     <a href={`/detail/${product?.id}`}>
                       <img
@@ -154,4 +155,4 @@ const BestSeller = () => {
   );
 };
 
-export default BestSeller;
+export default Product;

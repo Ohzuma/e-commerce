@@ -81,3 +81,19 @@ body {
   left: 0;
   top: 25%;
 }
+
+/* .col {
+  column-count: 4;
+
+  height: 100%;
+  padding: 10rem 2rem;
+} */
+
+.h1::after {
+  content: "";
+  height: 2px;
+  width: 100px;
+  display: block;
+  background-color: black;
+  margin-top: 0.5rem;
+}
