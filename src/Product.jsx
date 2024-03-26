@@ -57,100 +57,65 @@ const Product = () => {
       )}
       {error && <p>{error}</p>}
 
-      <section className="relative">
-        <button className="custom-next-button slider-btn">
-          <FaArrowRight />
-        </button>
-        <swiper-container
-          //   className="flex gap-4"
-          spacebetween="50"
-          slidesPerView="2"
-          loop="true"
-          //   autoplay="true"
-          navigation-next-el=".custom-next-button"
-          navigation-prev-el=".custom-prev-button"
-          autoplay={JSON.stringify({
-            delay: 2000,
-            disableOnInteraction: true,
-            reverseDirection: false,
-            pauseOnMouseEnter: true,
-          })}
-          breakpoints={JSON.stringify({
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-
-            768: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          })}
-        >
-          {product.map((item, i) => {
-            return (
-              <swiper-slide key={i}>
-                <a href={`/detail/${item?.id}`}>
-                  <div
-                    className="relative  bg-white shadow-lg 
-               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full "
-                  >
-                    <a href={`/detail/${product?.id}`}>
-                      <img
-                        src={item?.thumbnail}
-                        alt={item.title}
-                        className="h-[120px]  md:h-[200px] w-full 
+      <div
+        className="grid grid-cols-1 px-3 xs:grid-cols-2 sm:grid-cols-3 
+      md:grid-cols-4 gap-x-3 gap-y-4 md:gap-8  justify-items-center "
+      >
+        {product.map((item, i) => {
+          return (
+            <div key={i} className="w-full">
+              <a href={`/detail/${item?.id}`} className="w-full">
+                <div
+                  className="relative  bg-white shadow-lg  w-full
+               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full"
+                >
+                  <a href={`/detail/${product?.id}`}>
+                    <img
+                      src={item?.thumbnail}
+                      alt={item.title}
+                      className="h-[200px] w-full 
                      rounded-xl "
-                      />
-                    </a>
+                    />
+                  </a>
 
-                    <div className="flex flex-col gap-1">
-                      <h2 className="text-black font-bold text-sm md:text-md ">
-                        {item.title}
-                      </h2>
-                      <span className="text-sm text-black/90">
-                        {sliceText(item?.description)}...
+                  <div className="flex flex-col gap-1">
+                    <h2 className="text-black font-bold text-sm md:text-md ">
+                      {item.title}
+                    </h2>
+                    <span className="text-sm text-black/90">
+                      {sliceText(item?.description)}...
+                    </span>
+                    <span className="text-sm hidden md:block font-bold text-black">
+                      {item?.rating} rating
+                    </span>
+
+                    <p className="flex gap-2  font-bold">
+                      <span className="text-sm md:text-md ">
+                        ${dicountAmount(item?.price, item?.discountPercentage)}
                       </span>
-                      <span className="text-sm hidden md:block font-bold text-black">
-                        {item?.rating} rating
+                      <span className="line-through text-slate-500 text-sm">
+                        ${`${item?.price}`}
                       </span>
+                    </p>
 
-                      <p className="flex gap-2  font-bold">
-                        <span className="text-sm md:text-md ">
-                          $
-                          {dicountAmount(item?.price, item?.discountPercentage)}
-                        </span>
-                        <span className="line-through text-slate-500 text-sm">
-                          ${`${item?.price}`}
-                        </span>
-                      </p>
-
-                      <p className="flex gap-3  static transition-all md:absolute bottom-10 right-10 text-lg">
-                        <span className="hover:cursor-pointer">
-                          <FaRegHeart />
-                        </span>
-                        <span
-                          //   onClick={() => handleCart(product)}
-                          className="text-black/90 hover:cursor-pointer"
-                        >
-                          <FaCartArrowDown />
-                        </span>
-                      </p>
-                    </div>
+                    <p className="flex gap-3  static transition-all md:absolute bottom-10 right-10 text-lg">
+                      <span className="hover:cursor-pointer">
+                        <FaRegHeart />
+                      </span>
+                      <span
+                        //   onClick={() => handleCart(product)}
+                        className="text-black/90 hover:cursor-pointer"
+                      >
+                        <FaCartArrowDown />
+                      </span>
+                    </p>
                   </div>
-                </a>
-              </swiper-slide>
-            );
-          })}
-        </swiper-container>
-        <button className="custom-prev-button slider-btn">
-          <FaArrowLeft />
-        </button>
-      </section>
+                </div>
+              </a>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
