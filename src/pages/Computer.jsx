@@ -188,12 +188,17 @@ const Computer = () => {
               </h1>
               {loading && <p className="text-2xl text-black">Loading...</p>}
               <div
-                className="grid grid-cols-1 px-3 xs:grid-cols-2 sm:grid-cols-3 
+                className="grid grid-cols-2 px-0 xs:grid-cols-2 sm:grid-cols-3 
       md:grid-cols-4 gap-x-3 gap-y-4 md:gap-8  justify-items-center "
               >
                 {product.map((item, i) => {
                   return (
-                    <div key={i} className="w-full">
+                    <div
+                      key={i}
+                      className="w-full"
+                      data-aos="fade-up"
+                      data-aos-duration="2000"
+                    >
                       <a href={`/detail/${item?.id}`} className="w-full">
                         <div
                           className="relative  bg-white shadow-lg  w-full

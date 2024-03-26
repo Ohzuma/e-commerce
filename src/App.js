@@ -12,8 +12,14 @@ import Fashion from "./pages/Fashion";
 import Jewelries from "./pages/jewelries";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className=" overflow-x-hidden relative">
       {/* <LoadingContext> */}

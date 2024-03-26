@@ -6,6 +6,7 @@ import {
   FaPhone,
   FaPhoneVolume,
   FaUser,
+  FaUserCircle,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -71,15 +72,16 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleSubmit}
-              className="text-md px-2 py-1 font-medium rounded  text-black/80 bg-white relative flex justify-center items-center border "
+              className="text-xl px-2 py-1 font-medium rounded  text-white relative flex justify-center items-center  "
             >
-              Sign In
+              {/* Sign In */}
+              <FaUserCircle />
             </button>
             <a
               href="tel:+234 8163686235"
-              className="text-xl text-white relative flex justify-center items-center"
+              className="text-xl text-white relative flex justify-center items-center rotate-[100deg]"
             >
-              <FaPhoneVolume />
+              <FaPhone />
             </a>
 
             <button
