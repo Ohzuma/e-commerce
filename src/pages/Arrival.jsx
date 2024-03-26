@@ -87,7 +87,7 @@ const Arrival = () => {
 
             768: {
               slidesPerView: 3,
-              spaceBetween: 40,
+              spaceBetween: 5,
             },
           })}
         >
@@ -97,7 +97,7 @@ const Arrival = () => {
                 <a href={`/detail/${item?.id}`}>
                   <div
                     className="relative  bg-white shadow-lg 
-               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full "
+               bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition"
                   >
                     <a href={`/detail/${product?.id}`}>
                       <img

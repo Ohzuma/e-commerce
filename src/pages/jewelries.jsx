@@ -200,7 +200,7 @@ const Jewelries = () => {
                     <div key={i}>
                       <div
                         className="relative  grayscale hover:grayscale-0 
-              bg-white py-5 rounded-sm px-2 md:px-5 h-full max-w-[250px] xs:max-w-[auto] 
+              bg-white py-5 rounded-sm px-2 md:px-5 h-full  xs:max-w-[auto] 
                flex-col gap-3 transition"
                       >
                         <a href={`/detail/${product?.id}`}>
