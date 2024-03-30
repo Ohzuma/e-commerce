@@ -7,9 +7,9 @@ const NewLetter = () => {
         className="grid grid-cols-1 md:grid-cols-2 place-items-center 
       place-content-center justify-items-center "
       >
-        <article className="flex flex-col gap-2">
+        <article className="flex flex-col gap-2 px-5">
           <span className="text-slate-400 text-sm ">Create you own design</span>
-          <h1 className="flex flex-col gap-1 text-white text-4xl font-bold">
+          <h1 className="flex flex-col gap-1 text-white text-4xl font-extrabold">
             <span>NIKE REACT PRESTO </span>
             <span>BY YOU</span>
           </h1>
@@ -19,9 +19,9 @@ const NewLetter = () => {
           </p>
           <button
             type="button"
-            className="bg-white text-black/90 max-w-[150px] h-[40px] text-[1rem] font-bold rounded-sm"
+            className="bg-pink-900 text-white max-w-[150px] h-[40px] text-[1rem] font-bold rounded-sm"
           >
-            Create
+            Subscribe
           </button>
         </article>
         <div className="w-[300px]  md:w-[400px] md:h-[600px]  md:-mt-[7rem]">

@@ -18,13 +18,25 @@
     @apply bg-slate-300 px-2 flex justify-center
                py-3 h-[40px] w-[40px] rounded;
   }
+  footer div {
+    @apply flex flex-col gap-5;
+  }
+  footer div h1 {
+    @apply text-lg font-bold;
+  }
+  footer div ul {
+    @apply flex flex-col gap-2;
+  }
+  footer div ul li {
+    @apply text-slate-800 font-medium text-[1.1rem];
+  }
 }
 
 .Hamburger span::before {
   content: "";
   width: 20px;
   height: 3px;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(0, 0, 0);
   display: block;
   margin-top: 3px;
 }
@@ -96,4 +108,14 @@ body {
   display: block;
   background-color: black;
   margin-top: 0.5rem;
+}
+.nav-btn {
+  gap: 0.75rem;
+  color: rgb(49, 49, 49);
+}
+.nav-btn::before {
+  content: "";
+  height: 25px;
+  width: 1px;
+  background-color: rgb(49, 49, 49);
 }

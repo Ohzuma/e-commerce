@@ -15,6 +15,7 @@ import Signup from "./pages/auth/Signup";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Found404 from "./component/Found404";
 function App() {
   useEffect(() => {
     AOS.init();
@@ -36,20 +37,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        <Route
-          path="*"
-          element={
-            <div className="mt-[15rem] flex flex-col justify-center items-center">
-              <p className="text-2xl font-bold">Page Not Found</p>
-              <p className="text-md">
-                Go back to{" "}
-                <a href={"/"} className="text-xl text-blue-700 font-bold">
-                  home page
-                </a>
-              </p>
-            </div>
-          }
-        />
+        <Route path="*" element={<Found404 />} />
       </Routes>
       <Footer />
       {/* </LoadingContext> */}

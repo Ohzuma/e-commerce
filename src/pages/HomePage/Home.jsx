@@ -19,7 +19,7 @@ const Home = () => {
             modi consequatur, amet consectetur adipisicing elite
           </p>
           <div>
-            <button className="outline-none font-bold z-[999] grayscale  border-0 bg-red-900 text-white  py-4 px-2 w-[140px] hover:bg-red-900/80 hover:transition transition  h-[45px] flex justify-center items-center text-[1rem] rounded-md">
+            <button className="outline-none font-bold z-[999]  border-0 bg-red-900 text-white  py-4 px-2 w-[140px] hover:bg-red-900/80 hover:transition transition  h-[45px] flex justify-center items-center text-[1rem] rounded-md">
               View Now
             </button>
           </div>
