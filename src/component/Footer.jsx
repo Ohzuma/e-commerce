@@ -3,16 +3,13 @@ import React from "react";
 import {
   FaFacebook,
   FaTwitter,
-  FaInstagram,
   FaGithub,
   FaEnvelope,
   FaWhatsapp,
-  FaAddressBook,
-  FaMap,
   FaLandmark,
   FaPhone,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="relative mt-[5rem]">
@@ -25,7 +22,7 @@ const Footer = () => {
             >
               MeShop
             </a>
-            <p className="text-[1.1rem] text-slate-800 break-keep ">
+            <p className="text-[1rem] text-slate-800 break-keep ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
               rerum veritatis laboriosam iure cumque laudantium temporibus rem
               impedit perferendis culpa?

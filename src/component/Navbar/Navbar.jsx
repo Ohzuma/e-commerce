@@ -11,34 +11,33 @@ import {
 } from "react-icons/fa";
 import Header from "./Header";
 import NavHeader from "./NavHeader";
+import axios from "axios";
 
 const Navbar = () => {
   const [setNav, setShowNav] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  let nav = document.getElementById("nav");
-  // useEffect(() => {
-  //   window.onscroll = () => {
-  //     if (window.scrollY > 10) {
-  //       nav.classList.add("top-0");
-  //       nav.classList.add("transition");
-  //       // navRef.current.remove();
-  //       console.log(nav);
-  //     } else if (window.scrollY === 0) {
-  //       nav.classList.remove("top-0");
-  //     }
-  //     // console.log(window.scrollY);
-  //   };
-  // });
-
-  const { handleSubmit } = LoadingContext();
-
+  const [category, setCatergory] = useState([]);
+  const { handleSubmit, handleChange } = LoadingContext();
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get(`https://dummyjson.com/products/categories`)
+        .then((res) => {
+          setCatergory(res.data);
+        })
+        .catch((err) => {
+          console.log(err?.message);
+        });
+    };
+    fetchData();
+  }, []);
   return (
-    <header className="w-full">
+    <header className="w-full  flex flex-col gap-0 h-[150px]">
       <Header />
       <NavHeader />
       <nav
         className="
-      z-20  w-full transition bg-white h-[50px] shadow-lg flex items-center  py-2 px-4 md:px-12 "
+       w-full transition bg-white h-[80px] shadow-lg flex items-center  py-2 px-4 md:px-12 "
         id="nav"
       >
         <main className="w-full">
@@ -46,9 +45,20 @@ const Navbar = () => {
             <div className="flex  items-center   justify-between w-full gap-9">
               <div className="flex justify-center items-center gap-2">
                 <FaBorderAll className="text-xl" />
-                <select name="" id="" className="focus:outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="focus:outline-none"
+                  onChange={handleChange}
+                >
                   <option value="All">All Category</option>
-                  <option value="All">All Category</option>
+                  {category.map((item, i) => {
+                    return (
+                      <option value={item} key={i}>
+                        {item}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
               <ul

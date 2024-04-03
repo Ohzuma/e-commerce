@@ -8,7 +8,7 @@ import { FaCartArrowDown, FaHeart, FaRegHeart } from "react-icons/fa";
 const CategoryMenu = ({ value }) => {
   const [product, setProduct] = useState([]);
   const [discount, setDiscount] = useState();
-  const { error, loading, setLoading, setError, handleCart, cart } =
+  const { error, loading, setLoading, setError, handleCart, cart, filter } =
     LoadingContext();
 
   useEffect(() => {

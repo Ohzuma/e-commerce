@@ -7,14 +7,15 @@ import {
 } from "react-icons/fa";
 import { register } from "swiper/element/bundle";
 
-import { LoadingContext } from "./component/Context";
+import { LoadingContext } from "../component/Context";
 import axios from "axios";
 
 register();
 
 const Product = () => {
   const [product, setProduct] = useState([]);
-  const { error, loading, setLoading, setError } = LoadingContext();
+  const { error, loading, setLoading, setError, filter, search } =
+    LoadingContext();
 
   const dicountAmount = (price, discount) => {
     let newDiscount = discount / 100;
@@ -28,17 +29,22 @@ const Product = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-      await axios
-        .get(`https://dummyjson.com/products?limit=20&skip=30`)
-        .then((res) => {
-          setProduct(res.data.products);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err?.message);
-          setLoading(false);
-        });
+      try {
+        setLoading(true);
+        await axios
+          .get(`https://dummyjson.com/products?limit=20&skip=30`)
+          .then((res) => {
+            setProduct(res.data.products);
+            setLoading(false);
+          })
+          .catch((err) => {
+            setError(err?.message);
+            setLoading(false);
+          });
+      } catch (error) {
+        setError(error?.message);
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
@@ -61,15 +67,21 @@ const Product = () => {
         className="grid grid-cols-2 px-0 xs:grid-cols-2 sm:grid-cols-3 
       md:grid-cols-4 gap-x-3 gap-y-4 md:gap-8  justify-items-center "
       >
-        {product.map((item, i) => {
-          return (
-            <div
-              key={i}
-              className="w-full"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <a href={`/detail/${item?.id}`} className="w-full">
+        {product
+          .filter((item) => {
+            let filterItem = item.category.includes(filter);
+            let searchItem = item.title.toLowerCase().includes(search);
+            console.log();
+            return filterItem && searchItem;
+          })
+          .map((item, i) => {
+            return (
+              <div
+                key={i}
+                className="w-full"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 <div
                   className="relative  bg-white shadow-lg  w-full
                bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full"
@@ -87,9 +99,6 @@ const Product = () => {
                     <h2 className="text-black font-bold text-sm md:text-md ">
                       {item.title}
                     </h2>
-                    <span className="text-sm text-black/90">
-                      {sliceText(item?.description)}...
-                    </span>
                     <span className="text-sm hidden md:block font-bold text-black">
                       {item?.rating} rating
                     </span>
@@ -116,10 +125,9 @@ const Product = () => {
                     </p>
                   </div>
                 </div>
-              </a>
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
       </div>
     </div>
   );

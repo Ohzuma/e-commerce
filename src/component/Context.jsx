@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect, useRef } from "react";
 
 const Loading = createContext("");
 
@@ -8,6 +8,8 @@ export const Context = ({ children }) => {
   const [error, setError] = useState("");
   const [isCart, setIsCart] = useState({});
   const [cart, setCart] = useState([]);
+  const [filter, setFilter] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleCart = (item) => {
     let isPresent = false;
@@ -44,6 +46,45 @@ export const Context = ({ children }) => {
   // }, []);
 
   // console.log(cart?.id);
+  let handleChange = (e) => {
+    if (e.target.value !== "All") {
+      setFilter(e.target.value);
+    } else {
+      setFilter("");
+    }
+  };
+
+  const searchInput = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value.toLowerCase());
+  };
+
+  const headRef = useRef(null);
+
+  // console.log(headRef.current.add("hell"));
+  let header = document.getElementById("nav_header");
+  const scroll_function = (window.onscroll = () => {
+    try {
+      if (window.scrollY > 667 && header != null && header != undefined) {
+        header.classList.add("fixed");
+        header.classList.add("top-0");
+        header.classList.add("shadow-lg");
+      } else if (header === null && header === undefined) {
+        console.log("error");
+      } else {
+        header.classList.remove("fixed");
+        header.classList.remove("top-0");
+        header.classList.remove("shadow-lg");
+        header.classList.add("transition-all");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    scroll_function();
+  });
   const handleSubmit = () => {
     try {
       axios
@@ -73,6 +114,12 @@ export const Context = ({ children }) => {
         cart,
         isCart,
         handleSubmit,
+        filter,
+        setFilter,
+        handleChange,
+        searchInput,
+        search,
+        headRef,
       }}
     >
       {children}

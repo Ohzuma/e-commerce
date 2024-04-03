@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaCartArrowDown,
-  FaRegHeart,
-} from "react-icons/fa";
 import { register } from "swiper/element/bundle";
-
 import { LoadingContext } from "../../component/Context";
 import axios from "axios";
+import pic from "../../asset/img/black_headphone.png";
+
+register();
 const IndexHome = () => {
   const [product, setProduct] = useState([]);
   const { error, loading, setLoading, setError } = LoadingContext();
@@ -19,15 +15,11 @@ const IndexHome = () => {
     return newPrice;
   };
 
-  const sliceText = (text) => {
-    return text.substring(0, 40);
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       await axios
-        .get(`https://dummyjson.com/products?limit=30&skip=50`)
+        .get(`https://dummyjson.com/products?limit=5&skip=70`)
         .then((res) => {
           setProduct(res.data.products);
           setLoading(false);
@@ -39,31 +31,38 @@ const IndexHome = () => {
     };
     fetchData();
   }, []);
-
+  console.log(product);
   return (
-    <main className="mt-[4rem] px-3  sm:px-[2.5rem] -z-[999]">
-      <section className="relative h-[50vh] bg-slate-400 px-5 py-10">
-        <swiper-container
-          //   className="flex gap-4"
-          spacebetween="50"
-          slidesPerView="2"
-          loop="true"
-          autoplay={JSON.stringify({
-            delay: 2000,
-            disableOnInteraction: true,
-            reverseDirection: false,
-            pauseOnMouseEnter: true,
-          })}
-          navigation-next-el=".custom-next-button"
-          navigation-prev-el=".custom-prev-button"
-          breakpoints={JSON.stringify({
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-          })}
-        >
-          {/* {product.map((item, i) => {
+    <div className="relative">
+      <main className="mt-[4rem] px-0  sm:px-[2.5rem] home w-full relative ">
+        <section className="  bg-white flex justify-center items-center ">
+          {loading && (
+            <p className="text-2xl text-black flex justify-center items-center">
+              Loading...
+            </p>
+          )}
+          {error && <p>{error}</p>}
+          <swiper-container
+            loop="true"
+            pagination={{
+              clickable: true,
+              // paginationEl: "page-btn",
+            }}
+            delay="2000"
+            // autoplay={JSON.stringify({
+            //   disableOnInteraction: true,
+            //   reverseDirection: false,
+            //   pauseOnMouseEnter: true,
+            // })}
+            // navigation="true"
+            // breakpoints={JSON.stringify({
+            //   320: {
+            //     slidesPerView: 1,
+            //     spaceBetween: 20,
+            //   },
+            // })}
+          >
+            {/* {product.map((item, i) => {
             return (
               <swiper-slide key={i}>
                 <a href={`/detail/${item?.id}`}>
@@ -119,13 +118,42 @@ const IndexHome = () => {
             );
           })} */}
 
-          <swiper-slide>hello peple of goed</swiper-slide>
-          <swiper-slide>hello peple of goed</swiper-slide>
-          <swiper-slide>hello peple of goed</swiper-slide>
-          <swiper-slide>hello peple of goed</swiper-slide>
-        </swiper-container>
-      </section>
-    </main>
+            {product.map((item, i) => {
+              return (
+                <swiper-slide key={i}>
+                  <div className="flex justify-between gap-3 p-[2rem] items-center">
+                    <article className="flex flex-col gap-3">
+                      <div className="flex flex-col text-xl sm:text-[2rem] font-extrabold text-s-800 text-black">
+                        {" "}
+                        <span>{item?.title}</span>
+                      </div>
+                      <p className="text-[1rem] sm:text-lg max-w-[600px]">
+                        {item?.description}
+                      </p>
+
+                      <a
+                        href="/"
+                        className="bg-pink-900 text-white max-w-[150px] h-[40px] text-[1rem] font-bold rounded-sm flex justify-center items-center"
+                      >
+                        Visit Collection
+                      </a>
+                    </article>
+                    <div className="h-auto sm:h-[300px]">
+                      <img
+                        src={item?.thumbnail}
+                        alt={item?.title}
+                        className="h-full"
+                      />
+                    </div>
+                  </div>
+                </swiper-slide>
+              );
+            })}
+          </swiper-container>
+        </section>
+        {/* <div className="page-btn"></div> */}
+      </main>
+    </div>
   );
 };
 

@@ -67,10 +67,6 @@ const Shoes = () => {
     return newPrice;
   };
 
-  const sliceText = (text) => {
-    return text.substring(0, 80);
-  };
-
   return (
     <>
       <main className="relative h-full">
@@ -213,9 +209,7 @@ const Shoes = () => {
                             <h2 className="text-black font-bold text-sm md:text-md ">
                               {item.title}
                             </h2>
-                            <span className="text-sm text-black/90">
-                              {sliceText(item?.description)}...
-                            </span>
+
                             <span className="text-sm hidden md:block font-bold text-black">
                               {item?.rating} rating
                             </span>

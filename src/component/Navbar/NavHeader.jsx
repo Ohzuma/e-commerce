@@ -1,15 +1,21 @@
 import React from "react";
-import {
-  FaCartArrowDown,
-  FaPhone,
-  FaPhoneVolume,
-  FaUser,
-  FaUserCircle,
-} from "react-icons/fa";
+import { FaCartArrowDown, FaPhone, FaUserCircle } from "react-icons/fa";
+import { LoadingContext } from "../Context";
 const NavHeader = () => {
+  const {
+    error,
+    loading,
+    setLoading,
+    setError,
+    searchInput,
+    headRef,
+    handleSubmit,
+  } = LoadingContext();
+
   return (
     <header
-      className="bg-white z-20  md:flex  md:px-12 w-full transition delay-150 py-4 px-3"
+      ref={headRef}
+      className="bg-white header  h-[60px] md:flex  md:px-12 w-full transition delay-150 py-4 px-3"
       id="nav_header"
     >
       <section className="flex justify-between items-center w-full">
@@ -27,6 +33,7 @@ const NavHeader = () => {
             <input
               type="text"
               placeholder="Search and hit enter"
+              onInput={searchInput}
               className="w-full px-4 bg-slate-100 focus:outline-none focus:border-none text-md text-black/80"
             />
             <button className=" hidden sm:flex justify-center items-center md:w-[10rem] max-w-[15rem] nav-btn text-sm">
@@ -37,7 +44,7 @@ const NavHeader = () => {
         <div className="flex items-center gap-2 sm:gap-5 w-fulld">
           <button
             type="button"
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             className="text-xl px-2 py-1 font-medium rounded  text-black relative flex justify-center items-center  "
           >
             {/* Sign In */}

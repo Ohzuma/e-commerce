@@ -16,7 +16,8 @@ const Jewelries = () => {
   const [singleProduct, setSingleProduct] = useState([]);
   const [TopProduct, setTopProduct] = useState([]);
   const [product, setProduct] = useState([]);
-  const { error, loading, setLoading, setError } = LoadingContext();
+  const { error, loading, setLoading, setError, searchInput, search, filter } =
+    LoadingContext();
   const ranNum = Math.floor(Math.random() * 10) + 1;
 
   useEffect(() => {
@@ -76,12 +77,9 @@ const Jewelries = () => {
     return newPrice;
   };
 
-  const sliceText = (text) => {
-    return text.substring(0, 80);
-  };
   return (
     <>
-      <main className=" relative h-full">
+      <main className=" relative h-full mt-[2rem]">
         <div className="relative">
           <div className={`h-[25rem] relative -z-0`}>
             <img
@@ -100,19 +98,20 @@ const Jewelries = () => {
                 >
                   Well designed jewelries
                 </p>
-                <div
+                {/* <div
                   className="bg-white px-3 py-4 h-[50px] rounded-md flex 
                 items-center w-full sm:w-[500px] md:max-w-[500px] gap-4 justify-between "
                 >
                   <input
                     type="text"
                     placeholder="search item..."
+                    onInput={searchInput}
                     className=" focus:outline-none border-none z-40 outline-none text-black/80 py-5 px-3 h-full w-full"
                   />
                   <span className="text-black/80 text-xl">
                     <FaSearch />
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -195,15 +194,21 @@ const Jewelries = () => {
                 className="grid grid-cols-2 px-0 xs:grid-cols-2 sm:grid-cols-3 
       md:grid-cols-4 gap-x-3 gap-y-4 md:gap-8  justify-items-center "
               >
-                {product.map((item, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className="w-full"
-                      data-aos="fade-up"
-                      data-aos-duration="2000"
-                    >
-                      <a href={`/detail/${item?.id}`} className="w-full">
+                {product
+                  .filter((item) => {
+                    let filterItem = item.category.includes(filter);
+                    let searchItem = item.title.toLowerCase().includes(search);
+                    console.log();
+                    return filterItem && searchItem;
+                  })
+                  .map((item, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="w-full"
+                        data-aos="fade-up"
+                        data-aos-duration="2000"
+                      >
                         <div
                           className="relative  bg-white shadow-lg  w-full
                bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full"
@@ -221,9 +226,7 @@ const Jewelries = () => {
                             <h2 className="text-black font-bold text-sm md:text-md ">
                               {item.title}
                             </h2>
-                            <span className="text-sm text-black/90">
-                              {sliceText(item?.description)}...
-                            </span>
+
                             <span className="text-sm hidden md:block font-bold text-black">
                               {item?.rating} rating
                             </span>
@@ -254,10 +257,9 @@ const Jewelries = () => {
                             </p>
                           </div>
                         </div>
-                      </a>
-                    </div>
-                  );
-                })}
+                      </div>
+                    );
+                  })}
               </div>
             </section>
           </div>
