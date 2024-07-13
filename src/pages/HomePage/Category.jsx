@@ -11,8 +11,8 @@ import NewLetter from "../../component/NewLetter";
 const Category = () => {
   return (
     <div className=" px-3 lg:px-[45px] mt-[5rem] flex flex-col relative gap-8 justify-center">
-      <BestSeller />
       <Sport />
+      <BestSeller />
       <Arrival />
       <Product />
       <NewLetter />

@@ -9,7 +9,7 @@ const Index = () => {
     <>
       {/* <Sport /> */}
       {/* <Home /> */}
-      <IndexHome />
+      {/* <IndexHome /> */}
       <Category />
     </>
   );

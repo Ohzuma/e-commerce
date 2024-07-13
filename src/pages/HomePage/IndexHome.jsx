@@ -39,7 +39,7 @@ const IndexHome = () => {
           className=" overflow-hidden  bg-pink-400 sm:py-0 py-5  sm:h-[400px]  flex 
          sm:flex-row justify-between rounded-lg items-center  px-0 w-full  sm:px-[2.5rem]  "
         >
-          <div className=" -ml-12 md:ml-0 h-[20rem] sm:h-[40rem] w-[32rem]   ">
+          {/* <div className=" -ml-12 md:ml-0 h-[20rem] sm:h-[40rem] w-[32rem]   ">
             <img
               src={pic}
               alt="yyy"
@@ -59,7 +59,7 @@ const IndexHome = () => {
               at your
               <span className="font-bold text-black"> fingertips</span>
             </p>
-          </div>
+          </div> */}
         </section>
       </main>
     </div>

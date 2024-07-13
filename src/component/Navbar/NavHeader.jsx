@@ -32,7 +32,7 @@ const NavHeader = () => {
           <div className="w-full border bg-slate-100 max-w-[800px] m-auto flex justify-between items-center h-[40px] px-4  rounded-full gap-4">
             <input
               type="text"
-              placeholder="Search and hit enter"
+              placeholder="Search..."
               onInput={searchInput}
               className="w-full px-4 bg-slate-100 focus:outline-none focus:border-none text-md text-black/80"
             />
