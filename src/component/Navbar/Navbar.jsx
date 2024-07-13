@@ -32,7 +32,7 @@ const Navbar = () => {
     fetchData();
   }, []);
   return (
-    <header className="w-full flex flex-col gap-0 h-[150px]">
+    <header className="w-full bg-red-800 flex overflow-hidden flex-col gap-0 h-[140px]">
       {/* <Header /> */}
       <NavHeader />
       <nav

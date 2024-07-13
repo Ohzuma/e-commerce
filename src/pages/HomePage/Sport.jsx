@@ -49,10 +49,10 @@ const Sport = () => {
   }, []);
 
   return (
-    <main className="   relative home w-full">
+    <main className=" mt-[4rem]  relative home w-full">
       <section
         className="   bg-pink-400 sm:py-0 py-5  sm:h-[400px]  
-          rounded-lg   px-0 w-full flex flex-col justify-center   sm:px-[2.5rem]  "
+          px-0 w-full flex flex-col justify-center   sm:px-[2.5rem]  "
       >
         {loading && (
           <p className="text-2xl text-black flex justify-center items-center">

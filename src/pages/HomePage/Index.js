@@ -10,6 +10,7 @@ const Index = () => {
       {/* <Sport /> */}
       {/* <Home /> */}
       {/* <IndexHome /> */}
+      <Sport />
       <Category />
     </>
   );
