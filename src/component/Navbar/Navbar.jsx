@@ -16,14 +16,14 @@ import axios from "axios";
 const Navbar = () => {
   const [setNav, setShowNav] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [category, setCatergory] = useState([]);
+  const [category, setCategory] = useState([]);
   const { handleSubmit, handleChange } = LoadingContext();
   useEffect(() => {
     const fetchData = async () => {
       await axios
         .get(`https://dummyjson.com/products/categories`)
         .then((res) => {
-          setCatergory(res.data);
+          setCategory(res.data);
         })
         .catch((err) => {
           console.log(err?.message);
@@ -32,8 +32,8 @@ const Navbar = () => {
     fetchData();
   }, []);
   return (
-    <header className="w-full  flex flex-col gap-0 h-[150px]">
-      <Header />
+    <header className="w-full flex flex-col gap-0 h-[150px]">
+      {/* <Header /> */}
       <NavHeader />
       <nav
         className="
@@ -44,27 +44,37 @@ const Navbar = () => {
           <div className="flex flex-row items-center  justify-between w-full">
             <div className="flex  items-center   justify-between w-full gap-9">
               <div className="flex justify-center items-center gap-2">
-                <FaBorderAll className="text-xl" />
+                <FaBorderAll className="text-xl text-pink-800" />
                 <select
-                  name=""
-                  id=""
+                  name="category"
+                  id="category"
                   className="focus:outline-none"
                   onChange={handleChange}
                 >
-                  <option value="All">All Category</option>
+                  <option value="All" className=" p-5 text-sm font-light">
+                    All Category
+                  </option>
                   {category.map((item, i) => {
                     return (
-                      <option value={item} key={i}>
-                        {item}
+                      <option
+                        value={item.name}
+                        className="text-sm font-light"
+                        key={i}
+                      >
+                        {item.name}
                       </option>
                     );
                   })}
+
+                  {/* {category.forEach((item, key) => {
+                    console.log(item);
+                  })} */}
                 </select>
               </div>
               <ul
                 className={`    md:w-full md:max-w-[100%]  z-40 text-black  md:self-start  md:relative md:top-0 md:left-auto md:right-auto transition-all md:flex md:gap-6  text-lg${
                   setNav
-                    ? " shadow-lg fixed bg-white left-[0px] top-[0] h-screen flex flex-col justify-center items-center max-w-[200px] w-[200px] gap-[2rem] md:flex md:gap-6 md:ml-8 text-[1.7rem]"
+                    ? " shadow-lg fixed bg-white left-[0px] top-[0] h-screen flex flex-col  -z-50  justify-center items-center max-w-[200px] w-[200px] gap-[2rem] md:flex md:gap-6 md:ml-8 text-[1.7rem]"
                     : " absolute   left-[-500px]  h-screen  top-[122px] max-w-[200px] m-auto flex flex-col md:flex-row justify-center items-center gap-[1.7rem]"
                 }`}
               >

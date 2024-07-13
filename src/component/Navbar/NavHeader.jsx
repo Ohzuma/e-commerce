@@ -37,7 +37,7 @@ const NavHeader = () => {
               className="w-full px-4 bg-slate-100 focus:outline-none focus:border-none text-md text-black/80"
             />
             <button className=" hidden sm:flex justify-center items-center md:w-[10rem] max-w-[15rem] nav-btn text-sm">
-              All Category
+              search
             </button>
           </div>
         </form>
@@ -63,7 +63,7 @@ const NavHeader = () => {
           >
             <FaCartArrowDown />
             <span
-              className="bg-red-700 absolute -top-3  -right-2 h-5 w-5
+              className="bg-pink-800 absolute -top-3  -right-2 h-5 w-5
                text-sm text-white rounded-full flex justify-center items-center"
             >
               2

@@ -75,22 +75,22 @@ const Computer = () => {
 
   return (
     <>
-      <main className="  relative h-full mt-[2rem]">
-        <div className="relative">
-          <div className={`h-[25rem] relative -z-0`}>
+      <main className="  relative mx-[2rem] rounded-lg  h-full mt-[2rem]">
+        <div className="relative  rounded-lg">
+          <div className={`h-[25rem] relative -z-0 rounded-lg`}>
             <img
               src={singleProduct?.thumbnail}
               alt={singleProduct?.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full rounded-lg object-cover"
             />
-            <div className="absolute w-full h-full bg-black/90 top-0 flex justify-center items-center text-white">
+            <div className="absolute w-full h-full rounded-lg bg-pink-400/90 top-0 flex justify-center items-center text-white">
               <div className="flex flex-col md:gap-2 gap-1 items-center justify-center">
-                <h1 className=" text-2xl sm:text-5xl text-white font-extrabold tracking-wide">
+                <h1 className=" text-2xl sm:text-5xl text-black/90 font-extrabold tracking-wide">
                   Get The Best Accessories
                 </h1>
                 <p
                   className="text-md sm:text-xl 
-                font-medium normal-case"
+                font-medium normal-case text-black/90"
                 >
                   Get the best accessories online
                 </p>
@@ -154,7 +154,7 @@ const Computer = () => {
                             className="w-full md:w-[100px] h-[70px] object-contain"
                             alt={item?.title}
                           />
-                          <p className="text-[0.7rem] text-black/80">
+                          <p className="text-[0.7rem] text-black">
                             {item?.title}
                           </p>
                         </a>

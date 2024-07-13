@@ -75,7 +75,7 @@ const Arrival = () => {
                 className="relative  bg-white shadow-lg  w-full
                bg-transparent py-5 rounded-md px-2 md:px-5  flex flex-col gap-3 transition h-full"
               >
-                <a href={`/detail/${product?.id}`}>
+                <a href={`/detail/${item?.id}`}>
                   <img
                     src={item?.thumbnail}
                     alt={item.title}

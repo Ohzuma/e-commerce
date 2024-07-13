@@ -12,9 +12,10 @@ module.exports = {
         "3xl": "1920px", // Example of another new breakpoint
       },
     },
-    fontFamily: {
-      poppins: "'Popins',sans-serif",
-    },
+    // fontFamily: {
+    //   // poppins: "'Popins',sans-serif",
+    //   // Space: "'Space Grotesk',sans-serif",
+    // },
   },
 
   plugins: [],
